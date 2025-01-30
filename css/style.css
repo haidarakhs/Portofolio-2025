@@ -8,7 +8,7 @@
 
 body {
     font-family: "Open Sans", serif;
-
+    scroll-behavior: smooth; /* Smooth scroll for the entire page */
 }
 
 .nav-start {
@@ -46,6 +46,8 @@ body {
     padding: 50px;
     background-color: #F1F0EE;
     border-radius: 0 0 100px 100px;
+    opacity: 0;
+    animation: fadeInUp 1s forwards;
 }
 
 .profile img {
@@ -100,15 +102,19 @@ body {
     position: relative;
     z-index: 3; 
     padding: 3rem 2rem;
+    opacity: 0;
+    animation: fadeInUp 1s 0.3s forwards;
 }
 
 /* Pastikan .Skill tetap berada di bawah .partner */
 .Skill {
     background-color: #F1F0EE;
     position: relative;
-    z-index: 2; /* Lebih rendah dari .partner */
+    z-index: 2; 
     padding: 15rem ;
     margin-top: -4rem;
+    opacity: 0;
+    animation: fadeInUp 1s 0.6s forwards;
 }
 .title-skill {
     text-align: center;
@@ -136,7 +142,7 @@ body {
     margin-top: 10px;
 }
 .container {
-    position: relative; /* Sebagai pembungkus agar garis dan button tetap dalam satu area */
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -145,26 +151,27 @@ body {
 
 .line-behind {
     position: absolute;
-    width: 1150px; /* Panjang garis */
-    height: 0.6px; /* Ketebalan garis */
-    background-color: #333; /* Warna garis */
-    z-index: 1; /* Pastikan garis ada di belakang button */
+    width: 1150px; 
+    height: 0.6px;
+    background-color: #333; 
+    z-index: 1; 
 }
 
 .label-skill {
-    position: relative; /* Supaya tetap di atas garis */
+    position: relative;
     background-color: white;
     padding: 0.5rem 1rem;
     border-radius: 20px;
     font-weight: bold;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transform: rotate(-10deg);
-    z-index: 2; /* Pastikan button ada di atas garis */
+    z-index: 2; 
 }
 .label-skill a{
     color: black;
     text-decoration: none;
 }
+
 .footer{
     background-color: white;
     position: relative;
@@ -174,6 +181,8 @@ body {
     border-radius: 100px 100px 0 0;
     z-index: 4;
     padding: 5rem;
+    opacity: 0;
+    animation: fadeInUp 1s 0.9s forwards;
 }
 .handshake img {
     width: 120px;
@@ -182,10 +191,8 @@ body {
     object-fit: cover;
     background-color: #F1F1EF;
     margin-top: 3rem;
-
-    /* Tambahan */
-    padding: 10px; /* Jarak antara gambar & background */
-    border: 5px solid rgba(241, 241, 239, 0.8); /* Warna background di belakang gambar */
+    padding: 10px;
+    border: 5px solid rgba(241, 241, 239, 0.8); 
 }
 .footer-content p{
         font-size: 4rem;
@@ -214,7 +221,6 @@ body {
 .button-email a{
     color: white;
     font-size: 0.8rem;
-    
 }
 .button-whatsaap{
     background-color: white;
@@ -245,4 +251,16 @@ body {
     margin-top: 2rem;
     display: flex;
     margin: 3rem ;
+}
+
+/* Keyframes for Fade-in Animations */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
